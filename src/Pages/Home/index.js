@@ -1,15 +1,10 @@
-import { memo, useCallback, useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { Navbar } from "../../components/Navbar";
 import { getAllProductCategories, getAllProducts } from "../../api/getAllProducts";
 import { ProductCard } from "../../components/ProductCard";
 import { ProductFilter } from "../../components/ProductFilter";
 
 export const Home = memo(()=>{
-    const intialState ={
-        categoryFilter:'',
-        priceFilter:{min:0,max:10000},
-        ratingFilter:0,
-    }
     const [products,setProducts]=useState([]);
     const [categories,setCategories]=useState([]);
     const [filteredProducts,setfilteredProducts]=useState(products);
@@ -24,26 +19,45 @@ export const Home = memo(()=>{
         })()
     },[])
     
-    const onCategoryAdd = (category)=>{
+    const onCategoryAdd = (category,[min,max])=>{
         if (category?.isActive){
-            const modifiedCategory = categories.map( ctg => ctg.id===category.id ? {...ctg,isActive:false} : ctg)
-            setfilteredProducts(products);
+            const modifiedCategory = categories.map( ctg => ctg.id===category.id ? {...ctg,isActive:false} : ctg);
+            const filterProduct = products.filter( prd => (max===100 ? prd.price >= (min*10) : prd.price >= (min*10) && prd.price <= (max*10)));
+            // console.log(filterProduct,max*10,min*10)
+            setfilteredProducts(filterProduct);
             setCategories(modifiedCategory);
         } else{
-            const filterProduct = products.filter( prd => prd.category.id===category.id);
+            // console.log(max*10,min*10)
+            const filterProduct = products.filter( prd => prd.category.id===category.id && (max===100 ? prd.price >= (min*10) : prd.price >= (min*10) && prd.price <= (max*10)));
+            // console.log(filterProduct,)
             const modifiedCategory = categories.map( ctg => ctg.id===category.id ? {...ctg,isActive:true} : {...ctg,isActive:false});
             setfilteredProducts(filterProduct);
             setCategories(modifiedCategory);
+        }
+    }
+    const handlePricefilter=([min,max])=>{
+        const category = categories.find( ctg => ctg?.isActive );
+        // console.log(category?.length > 0)
+        const categoryFilter= category?.length > 0 ?  products.filter( prd => prd.category.id===category.id) : products;
+        // console.log(categoryFilter)
+        if(max===100){
+            const filterProduct = categoryFilter.filter( prd => prd.price >= min*10);
+            setfilteredProducts(filterProduct);
+        }
+        else{
+            const filterProduct = categoryFilter.filter( prd => prd.price >= min*10 && prd.price <= max*10);
+            // console.log(filterProduct)
+            setfilteredProducts(filterProduct);
         }
     }
 
     return (
         <>
         <Navbar />
-        <main className="flex gap-5">
-            <div className="w-2/12 relative">
+        <main className="flex gap-5 ">
+            <div className="w-2/12">
             <div className="w-full relative p-4 bg-white my-4 ml-4">
-                <ProductFilter categories={categories} onCategoryAdd={onCategoryAdd} />
+                <ProductFilter categories={categories} onCategoryAdd={onCategoryAdd} handlePricefilter={handlePricefilter}/>
             </div>
             </div>
             <div className="w-10/12">
