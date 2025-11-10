@@ -1,10 +1,9 @@
 import { memo } from "react";
-import { useCart } from "../../context/cart-context"
+import { useCart, useWishlist } from "../../context"
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { useNavigate } from "react-router-dom";
-import { useWishlist } from "../../context/wishlist-context";
 
 export const ProductCard = memo(({data})=>{
     const { cartDispatch, cart } = useCart();

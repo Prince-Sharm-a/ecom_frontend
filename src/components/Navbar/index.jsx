@@ -3,8 +3,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../../context/cart-context";
-import { useLogin } from "../../context/login-context";
+import { useCart, useLogin } from "../../context";
 import LogoutIcon from '@mui/icons-material/Logout';
 import { fetchProfile } from "../../api/auth";
 
@@ -30,6 +29,7 @@ export const Navbar=memo(()=>{
         loginDispatch({
             type:'LOGOUT'
         })
+        localStorage.clear()
     }
     const onLoginClick = () =>{
         if(!token?.access_token){

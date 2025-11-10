@@ -1,6 +1,5 @@
 import { memo } from "react";
-import { Navbar } from "../../components/Navbar";
-import { CreateAccount } from "../../components/CreateAccount";
+import { Navbar, CreateAccount } from "../../components";
 
 export const Signup = memo(()=>{
     return(

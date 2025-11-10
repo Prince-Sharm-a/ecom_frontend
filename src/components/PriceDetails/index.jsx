@@ -1,7 +1,6 @@
 import { memo, useMemo } from "react";
-import { useCart } from "../../context/cart-context";
+import { useCart, useLogin } from "../../context";
 import { useNavigate } from "react-router-dom";
-import { useLogin } from "../../context/login-context";
 
 export const PriceDetails = memo(()=>{
     const { cart, cartDispatch } = useCart();

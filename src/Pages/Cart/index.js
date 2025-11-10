@@ -1,8 +1,6 @@
 import { memo } from "react";
-import { Navbar } from "../../components/Navbar";
-import { HorizontalProductCard } from "../../components/HorizontalProductCard";
+import { Navbar, HorizontalProductCard, PriceDetails } from "../../components";
 import { useCart } from "../../context/cart-context";
-import { PriceDetails } from "../../components/PriceDetails";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useNavigate } from "react-router-dom";
 

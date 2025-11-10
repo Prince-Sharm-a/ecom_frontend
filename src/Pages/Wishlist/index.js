@@ -1,6 +1,5 @@
 import { memo } from "react";
-import { Navbar } from "../../components/Navbar";
-import { ProductCard } from "../../components/ProductCard";
+import { Navbar, ProductCard } from "../../components";
 import { useWishlist } from "../../context/wishlist-context";
 
 export const Wishlist = memo(()=>{

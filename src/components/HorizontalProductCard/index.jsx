@@ -1,8 +1,7 @@
 import { memo } from "react";
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
-import { useCart } from "../../context/cart-context";
-import { useWishlist } from "../../context/wishlist-context";
+import { useCart, useWishlist } from "../../context";
 
 export const HorizontalProductCard = memo(({data})=> {
     const { cartDispatch } = useCart();

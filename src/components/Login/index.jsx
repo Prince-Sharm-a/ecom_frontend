@@ -1,6 +1,6 @@
 import { memo, useState } from "react";
-import { useLogin } from "../../context/login-context";
-import { fetchProfile, userLogin } from "../../api/auth";
+import { useLogin } from "../../context";
+import { userLogin } from "../../api/auth";
 import { useNavigate } from "react-router-dom";
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import VisibilityIcon from '@mui/icons-material/Visibility';

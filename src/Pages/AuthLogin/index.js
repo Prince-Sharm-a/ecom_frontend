@@ -1,6 +1,5 @@
 import { memo } from "react";
-import { Login } from "../../components/Login";
-import { Navbar } from "../../components/Navbar";
+import { Login, Navbar } from "../../components";
 
 export const AuthLogin = memo(()=>{
     return(

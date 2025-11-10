@@ -1,11 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { Home } from './Pages/Home';
-import { Cart } from './Pages/Cart';
-import { Wishlist } from './Pages/Wishlist';
-import { AuthLogin } from './Pages/AuthLogin';
-import { Signup } from './Pages/Signup';
+import { Home, Cart, Wishlist, AuthLogin, Signup } from './Pages';
 
 function App() {
   return (

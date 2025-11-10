@@ -1,8 +1,6 @@
 import { memo, useEffect, useState } from "react";
-import { Navbar } from "../../components/Navbar";
+import { Navbar, ProductCard, ProductFilter } from "../../components";
 import { getAllProductCategories, getAllProducts } from "../../api/getAllProducts";
-import { ProductCard } from "../../components/ProductCard";
-import { ProductFilter } from "../../components/ProductFilter";
 
 export const Home = memo(()=>{
     const [products,setProducts]=useState([]);
