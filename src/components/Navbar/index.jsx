@@ -20,8 +20,10 @@ export const Navbar=memo(()=>{
     // const [pos, setPos] = useState({x:0,y:0});
     useEffect(()=>{
         ( async ()=>{
-            const details = await fetchProfile(token.access_token);
-            loginDispatch({type:"LOGIN",payload:details});
+            if(token.access_token){
+                const details = await fetchProfile(token.access_token);
+                loginDispatch({type:"LOGIN",payload:details});
+            }
         })()
     },[token.access_token])
 

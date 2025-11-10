@@ -8,7 +8,7 @@ export const Wishlist = memo(()=>{
         <>
         <Navbar />
         <main className="flex flex-wrap justify-center my-4">
-            <div className="bg-white w-10/12 px-[5%] flex flex-wrap gap-5">
+            <div className="bg-white w-10/12 px-[5%] flex flex-wrap gap-5 p-4">
                 {
                     wishlist?.length > 0 && wishlist.map(product => <ProductCard key={product?.id} data={product} />)
                 }
