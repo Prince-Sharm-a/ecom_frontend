@@ -28,7 +28,7 @@ export const Navbar=memo(()=>{
                 }
             }
         })()
-    },[token.access_token])
+    },[token.access_token,loginDispatch])
 
     const onLogoutClick = ()=>{
         loginDispatch({
