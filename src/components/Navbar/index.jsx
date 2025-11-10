@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart, useLogin } from "../../context";
 import LogoutIcon from '@mui/icons-material/Logout';
 import { fetchProfile } from "../../api/auth";
+import logo from "../../logosvg.png"
 
 export const Navbar=memo(()=>{
     const navigate = useNavigate();
@@ -22,7 +23,9 @@ export const Navbar=memo(()=>{
         ( async ()=>{
             if(token.access_token){
                 const details = await fetchProfile(token.access_token);
-                loginDispatch({type:"LOGIN",payload:details});
+                if(details?.email){
+                    loginDispatch({type:"LOGIN",payload:details});
+                }
             }
         })()
     },[token.access_token])
@@ -42,7 +45,8 @@ export const Navbar=memo(()=>{
     return (
         <header className="flex bg-white text-black px-6 py-4">
             <div>
-                <h1 className="text-5xl cursor-pointer " onClick={()=> navigate("/")}>SHOP IT</h1>
+                {/* <h1 className="text-5xl cursor-pointer " onClick={()=> navigate("/")}>SHOPY IT</h1> */}
+                <img className="w-[200px] h-[60px]" src={logo} />
             </div>
             <nav className="ml-auto flex gap-8">
                 <span 
