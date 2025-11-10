@@ -46,7 +46,7 @@ export const Navbar=memo(()=>{
         <header className="flex bg-white text-black px-6 py-4">
             <div>
                 {/* <h1 className="text-5xl cursor-pointer " onClick={()=> navigate("/")}>SHOPY IT</h1> */}
-                <img className="w-[200px] h-[60px]" src={logo} />
+                <img className="w-[200px] h-[60px]" src={logo} alt="logo" onClick={()=> navigate("/")}/>
             </div>
             <nav className="ml-auto flex gap-8">
                 <span 
