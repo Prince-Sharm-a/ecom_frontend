@@ -1,0 +1,21 @@
+import { createContext, memo, useContext, useReducer } from "react";
+import { wishlistReducer } from "../reducers/wishlistReducer";
+
+const WishlistContext = createContext();
+
+const WishlistProvider =memo(({children})=>{
+    const initialState = {
+        wishlist : [],
+    }
+    const [{ wishlist },wishlistDispatch] = useReducer(wishlistReducer,initialState);
+
+    return (
+        <WishlistContext.Provider value={{wishlist,wishlistDispatch}} >
+            {children}
+        </WishlistContext.Provider>
+    )
+})
+
+const useWishlist = () => useContext(WishlistContext);
+
+export { WishlistProvider, useWishlist };

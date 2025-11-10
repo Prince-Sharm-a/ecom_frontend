@@ -1,0 +1,185 @@
+body{
+  scrollbar-color: none;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.card{
+  width: 280px;
+  /* height: 600px; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.card-image-container{
+  width: 280px;
+  height: 280px;
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.card-details{
+  margin: 0 15px 15px 15px;
+  /* width: 290px; */
+  align-items: center;
+  padding-bottom: 0px;
+}
+.card-title{
+  font-size: 24px;
+  height: 110px;
+  font-weight: 500;
+  margin-top: 0px;
+  overflow: hidden;
+}
+.card-des{
+  overflow: hidden;
+}
+.card-price{
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.cta-btn{
+  margin-bottom: 0px;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.button{
+  background: rgb(255,0,0);
+  text-align: center;
+  color: white;
+  outline: none;
+  font-size: 20px;
+  font-weight: 500;
+  width: 100%;
+  height: 50px;
+  border-radius: 6px;
+}
+.button:hover{
+  background-color: rgb(255,0,0,0.5);
+}
+.price-strike-through{
+  text-decoration: line-through;
+}
+
+.card-horizontal{
+  width: 100%;
+  display: flex;
+}
+.card-hori-image-container{
+  width: 250px;
+  /* height: 10px; */
+}
+
+.card-horizontal-details{
+  display: flex;
+  margin: 0 15px 15px 15px;
+  row-gap: 6px;
+  width: 100%;
+  padding-top: 10px;
+  flex-direction: column;
+}
+.card-horizontal-title{
+  font-size: 24px;
+  /* height: 120px; */
+  font-weight: 500;
+  /* margin-top: 0px; */
+}
+.card-hori-price{
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.quantity-container{
+  font-size: 20px;
+}
+.q-title{
+  display: block;
+  font-weight: 600;
+  font-size: 20px;
+}
+.q-count-counter{
+  font-weight: 800;
+}
+.q-count-d{
+  display: flex;
+  margin-bottom: auto;
+  border: 2px solid gray;
+  border-radius: 999px;
+}
+.q-count-i{
+  display: flex;
+  margin-bottom: auto;
+  border: 2px solid gray;
+  border-radius: 999px;
+}
+.q-count-value{
+  display: block;
+}
+.cta-horizontal-btn{
+  display: flex;
+}
+.hori-btn{
+  display: flex;
+  flex-wrap: wrap;
+  height: 40px;
+  font-size: 18px;
+  place-content: center;
+  padding: 0 40px;
+  width: auto;
+}
+.bg-transparent{
+  background-color: transparent;
+  border: 2px solid;
+  border-color: rgb(255,0,0);
+  color: rgb(255,0,0);
+}
+.bg-transparent:hover{
+  background-color: rgb(255,0,0,0.1);
+}
+.w-auto{
+  width: auto;
+}
+.scrollbar-hide{
+  scrollbar-width: none;
+}
