@@ -26,7 +26,7 @@ export const Cart = memo(()=>{
                         cart.length > 0 ? cart.map(product => (
                             <HorizontalProductCard data={product} key={product.id} />
                         )) :
-                        <button className="button font-medium text-3xl w-auto px-20 my-[60px] ml-[40%] flex flex-wrap flex-col justify-center" onClick={handleAddItemClick} ><ShoppingCartOutlinedIcon sx={{fontSize:"32px"}} />Add Items....</button>
+                        <button className="button font-medium text-3xl w-auto px-20 my-[60px] mx-auto flex flex-wrap flex-col justify-center" onClick={handleAddItemClick} ><ShoppingCartOutlinedIcon sx={{fontSize:"32px"}} />Add Items....</button>
                     }
                 </div>
                 </div>
